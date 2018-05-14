@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS MQTT sending</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <script src="js/skel-panels.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/postThingSpeak.js"></script>
+    <script src="js/button_checking.js"></script>
+    <!--<script data-main="js/thingspeak.js" src="js/require.js"></script>-->
+    <script src="js/require.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel-noscript.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-desktop.css" />
+    </noscript>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript">
+    </script>
+    <script src="js/mqtt.js"></script>
+    <script type = "text/javascript">
+        MQTTconnect();
+    </script>
+    <div id="header">
+        <div id="nav-wrapper">
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="Traffic.html">Traffic</a></li>
+                    <li><a href="Weather.html">Weather</a></li>
+                    <li><a href="Sensor.html">Sensor</a></li>
+                    <li><a href="Control.html">Control panel</a></li>
+                    <li><a href="Registration.html">Registration</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+
+            <!-- Logo -->
+            <div id="logo">
+                <h1><a href="#">Control panel</a></h1>
+                <span class="tag">RoadSides Unit</span>
+            </div>
+        </div>
+    </div>
+</head>
+<body>
+
+<div id="featured">
+    <div class="container">
+        <div class="row">
+            <section class="4u">
+                <span class="pennant"><span class="fa fa-truck"></span></span>
+                <h3>Control the Traffic service</h3>
+                <p>Click this button to start/stop the Traffic collection service.</p>
+                <input id="clickmeTruck" type="button" value="Start" onclick="submitRequest(1,100);"
+                       class="button button-style1"/>
+                <input id="killmeTruck" type="button" value="Stop" onclick="submitRequest(1,200);"
+                       class="button1 button-style1"/>
+                <p id="messageTraffic">Not running </p>
+                <!--<script> MQTTconnectRed();</script>-->
+            </section>
+            <section class="4u">
+                <span class="pennant"><span class="fa fa-cloud-upload-alt"></span></span>
+                <h3>Control the Cloud service</h3>
+                <p>Click this button to start/stop the Cloud updating service.</p>
+                <input id="clickmeCloud" type="button" value="Start" onclick="submitRequest(1,101);"
+                       class="button button-style1">
+                <input id="killmeCloud" type="button" value="Stop" onclick="submitRequest(1,201);"
+                       class="button1 button-style1"/>
+                <p id="messageCloud">Not running </p>
+                <!--<script> MQTTconnectGreen();</script>-->
+            </section>
+            <section class="4u">
+                <span class="pennant"><span class="fa fa-sun"></span></span>
+                <h3>Control the Weather service</h3>
+                <p>Click this button to start/stop the Weather collection service.</p>
+                <input id="clickmeWeather" type="button" value="Start" onclick="submitRequest(1,102);"
+                       class="button button-style1"/>
+                <input id="killmeWeather" type="button" value="Stop" onclick="submitRequest(1,202);"
+                       class="button1 button-style1"/>
+                <p id="messageWeather">Not running </p>
+                <!--<script> MQTTconnectBlue();</script>-->
+            </section>
+        </div>
+        <hr />
+        <div class="row">
+            <section class="4u">
+                <span class="pennant"><span class="fa fa-location-arrow"></span></span>
+                <h3>Control the GPS service</h3>
+                <p>Click this button to start/stop the GPS location service.</p>
+                <input id="clickmeGPS" type="button" value="Start" onclick="submitRequest(1,103);"
+                       class="button button-style1">
+                <input id="killmeGPS" type="button" value="Stop" onclick="submitRequest(1,203);"
+                       class="button1 button-style1"/>
+                <p id="messageGPS">Not running </p>
+            </section>
+            <section class="4u">
+                <span class="pennant"><i class="fas fa-thermometer-half"></i></span>
+                <h3>Control the Sensors service</h3>
+                <p>Click this button to start/stop the Sensor data collection service.</p>
+                <input id="clickmeSensor" type="button" value="Start" onclick="submitRequest(1,104);"
+                class="button button-style1">
+                <input id="killmeSensor" type="button" value="Stop" onclick="submitRequest(1,204);"
+                       class="button1 button-style1"/>
+                <p id="messageSensor">Not running </p>
+            </section>
+            <section class="4u">
+                <span class="pennant"><i class="fab fa-bluetooth"></i></span>
+                <h3>Control Bluetooth service</h3>
+                <p>Click this button to start/stop the Bluetooth authentication service.</p>
+                <input id="clickmeBLE" type="button" value="Start"  onclick="submitRequest(1,105);"
+                       class="button button-style1">
+                <input id="killmeBLE" type="button" value="Stop" onclick="submitRequest(1,205);"
+                       class="button1 button-style1"/>
+                <p id="messageBLE">Not running </p>
+            </section>
+        </div>
+        <hr />
+        <div class="row">
+            <section class="4u">
+                <span class="pennant"><i class="fas fa-american-sign-language-interpreting"></i></span>
+                <h3>Control the Translation service</h3>
+                <p>Click this button to start/stop the translation to OneM2M messages service.</p>
+                <input id="clickmeTranslator" type="button" value="Start" disabled='disabled' onclick="submitRequest(1,106);"
+                       class="button button-style1">
+                <input id="killmeTranslator" type="button" value="Stop" disabled='disabled' onclick="submitRequest(1,206);"
+                       class="button1 button-style1"/>
+                <p id="messageTranslator">Not running </p>
+            </section>
+            <section class="4u">
+                <span class="pennant"><i class="fas fa-upload"></i></span>
+                <h3>Control the Transmission service</h3>
+                <p>Click on the following button to choose the information to be receive on arrival.</p>
+                <input id="clickmeTransmission" type="button" value="Click here"  onclick="location.href='Registration.html'"
+                        class="button button-style1">
+                <!--<p id="messageTransmission">Not running </p>-->
+
+            </section>
+        </div>
+        <hr />
+        <div class="row">
+            <section class="4u">
+                <span class="pennant"><i class="fas fa-cogs"></i></span>
+                <h3>Control all services </h3>
+                <p>Click this button to start/stop all services.</p>
+                <input id="clickmeAll" type="button" value="Start" disabled='disabled'  onclick="submitRequest(1,109);"
+                       class="button button-style1">
+                <input id="killmeAll" type="button" value="Stop" disabled='disabled' onclick="submitRequest(1,209);"
+                       class="button1 button-style1"/>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <div class="container">
+        <header>
+            <h2>RoadSide Unit Status</h2>
+        </header>
+        <hr />
+        <!--<div class="row">-->
+            <!--<section class="4u">-->
+                <!--<header>-->
+                    <!--<h3 style="font-size: 200%">Traffic status</h3>-->
+                <!--</header>-->
+                <!--<p>Last message received :</p>-->
+                <!--<p id="messageRedReceived">No message received</p>-->
+            <!--</section>-->
+            <!--<section class="4u">-->
+                <!--<header>-->
+                    <!--<h3 style="font-size: 200%">Cloud status</h3>-->
+                <!--</header>-->
+                <!--<p>Last message received :</p>-->
+                <!--&lt;!&ndash;<script> MQTTconnectGreen();</script>&ndash;&gt;-->
+                <!--<p id="messageGreenReceived">No message received</p>-->
+            <!--</section>-->
+            <!--<section class="4u">-->
+                <!--<header>-->
+                    <!--<h3 style="font-size: 200%">Weather status</h3>-->
+                <!--</header>-->
+                <!--<p>Last message received :</p>-->
+                <!--&lt;!&ndash;<script> MQTTconnectBlue();</script>&ndash;&gt;-->
+                <!--<p id="messageBlueReceived">No message received</p>-->
+            <!--</section>-->
+        <!--</div>-->
+        <!--<hr />-->
+        <div class="row">
+            <section class="4u">
+                <span class="pennant"></span>
+                <h3 style="font-size: 200%">Traffic status</h3>
+                <p>Last message received :</p>
+                <!--<script> MQTTconnectRed();</script>-->
+                <p id="messageTrafficReceived">No message received</p>
+            </section>
+            <section class="4u">
+                <h3 style="font-size: 200%">Cloud status</h3>
+                <p>Last message received :</p>
+                <p id="messageCloudReceived">No message received</p>
+            </section>
+            <section class="4u">
+                <h3 style="font-size: 200%">Weather status</h3>
+                <p>Last message received:</p>
+                <p id="messageWeatherReceivedFrom">No message received</p>
+            </section>
+        </div>
+        <hr />
+        <div class="row">
+            <section class="4u">
+                <span class="pennant"></span>
+                <h3 style="font-size: 200%">GPS status</h3>
+                <p>Last message received :</p>
+                <p id="messageGPSReceived">No message received</p>
+            </section>
+            <section class="4u">
+                <h3 style="font-size: 200%">Sensor status</h3>
+                <p>Last message received :</p>
+                <p id="messageSensorReceivedFrom">No message received</p>
+            </section>
+            <section class="4u">
+                <h3 style="font-size: 200%">Bluetooth status</h3>
+                <p>Last message received:</p>
+                <p id="messageBLEReceived">No message received</p>
+            </section>
+        </div>
+        <hr />
+        <div class="row">
+            <section class="4u">
+                <span class="pennant"></span>
+                <h3 style="font-size: 200%">Translator status</h3>
+                <p>Last message received :</p>
+                <p id="messageTranslatorReceived">Service disabled</p>
+            </section>
+            <section class="4u">
+                <span class="pennant"></span>
+                <h3 style="font-size: 200%">Transmission status</h3>
+                <p>Last message received :</p>
+                <p id="messageTransmissionReceived">Service disabled</p>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div id="footer">
+    <div class="container">
+        <section>
+            <header>
+                <h2>Get in touch</h2>
+                <span class="byline">Find more information here :</span>
+            </header>
+            <ul class="contact">
+                <li><a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+                <li class="active"><a href="#"><i class="fab fa-facebook"></i><span>Facebook</span></a></li>
+                <li><a href="#"><i class="fab fa-dribbble"></i><span>Pinterest</span></a></li>
+                <li><a href="#"><i class="fab fa-tumblr"></i><span>Google+</span></a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<!-- Copyright -->
+<div id="copyright">
+    <div class="container">
+        Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+    </div>
+</div>
+
+</body>
+</html>
+</body>
+</html>

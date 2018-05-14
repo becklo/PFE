@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Linear by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Linear by TEMPLATED</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+	</head>
+	<body>
+
+	<!-- Header -->
+		<div id="header">
+			<div id="nav-wrapper"> 
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="Traffic.html">Traffic</a></li>
+						<li><a href="Weather.html">Weather</a></li>
+						<li><a href="Sensor.html">Sensor</a></li>
+						<li><a href="Control.html">Control panel</a></li>
+						<li><a href="Registration.html">Registration</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="container"> 
+				
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="#">Sensor</a></h1>
+					<span class="tag">RoadSides Unit</span>
+				</div>
+			</div>
+		</div>
+	<!-- Header --> 
+
+	<!-- Main -->
+		<div id="main">
+			<div id="content" class="container">
+				<section>
+					<header>
+						<a href="https://thingspeak.com/channels/435527/">
+							<h2>Thingspeak</h2>
+						</a>
+						<span class="byline">The RoadSides Unit Cloud service</span>
+					</header>
+					<p>ThingSpeak™ is an IoT analytics platform service that allows you to aggregate, visualize and analyze
+						live data streams in the cloud. ThingSpeak provides instant visualizations of data posted by your devices to
+						ThingSpeak. With the ability to execute MATLAB® code in ThingSpeak you can perform online analysis and processing
+						of the data as it comes in. ThingSpeak is often used for prototyping and proof of concept IoT systems that require analytics.</p>
+					<p>The Roadside Unit sends all the sensors information (temperature and humidity for now) to a Channel. Each data is display on its own
+					Chart. This provide a view of the evolution of those data in real time. The local and remote data can be seen below : </p>
+
+				</section>
+			</div>
+		</div>
+	<!-- /Main -->
+
+    <div id="featured">
+        <div class="container">
+			<section>
+				<header>
+					<span class="byline">Temperature and humidity values measured by the Sensors on the RoadSide Unit</span>
+				</header>
+				<iframe href="https://thingspeak.com/channels/435527" width="450" height="260" style="border: 1px solid #cccccc;"
+						src="https://thingspeak.com/channels/435527/charts/5?api_key=1NP69SZQG5U34Z3L&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+				<iframe width="450" height="260" style="border: 1px solid #cccccc;"
+						src="https://thingspeak.com/channels/435527/charts/6?api_key=1NP69SZQG5U34Z3L&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
+				<header>
+					<span class="byline">Temperature and humidity values measured by remote Sensors</span>
+				</header>
+				<p>Remote Sensor 1</p>
+				<iframe width="450" height="260" style="border: 1px solid #cccccc;"
+						src="https://thingspeak.com/channels/435527/charts/1?api_key=1NP69SZQG5U34Z3L&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+				<iframe width="450" height="260" style="border: 1px solid #cccccc;"
+						src="https://thingspeak.com/channels/435527/charts/2?api_key=1NP69SZQG5U34Z3L&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+			</section>
+			<section>
+                <p>Remote Sensor 2</p>
+                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/435527/charts/3?api_key=1NP69SZQG5U34Z3L&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/435527/charts/4?api_key=1NP69SZQG5U34Z3L&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+            </section>
+        </div>
+    </div>
+
+	<!-- Tweet -->
+		<div id="tweet">
+			<div class="container">
+				<section>
+					<blockquote>&ldquo;RoadSide Unit project's web interface is still in development.&rdquo;</blockquote>
+				</section>
+			</div>
+		</div>
+	<!-- /Tweet -->
+
+	<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<section>
+					<header>
+						<h2>Get in touch</h2>
+						<span class="byline">Find more information here :</span>
+					</header>
+					<ul class="contact">
+						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+						<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+						<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
+						<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+	<!-- /Footer -->
+
+	<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+			</div>
+		</div>
+
+
+	</body>
+</html>
