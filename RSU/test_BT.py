@@ -3,7 +3,7 @@ import time
 import paho.mqtt.client as mqtt
 
 deviceList = [["b8:27:eb:4b:da:38", "raspberrypi"], ["A8:5c:2c:3a:fc:e0", "iPhone de Loula Beck"]]
-    # , ["24:0a:c4:02:5c:aa", "LoPy"]]
+# , ["24:0a:c4:02:5c:aa", "LoPy"]]
 # , ["20:16:d8:9e:f2:38", "LUBTZLLBECK"]]
 
 # MQTT
@@ -14,6 +14,7 @@ client = mqtt.Client()
 
 # Set the username and password for the MQTT client
 client.username_pw_set(mqtt_username, mqtt_password)
+
 
 def on_connect(client, userdata, flags, rc):
     """
@@ -68,6 +69,7 @@ def sendMQTTData(device):
     f.write(payload + "\n")
     f.close()
 
+
 client.on_connect = on_connect
 client.on_message = on_message
 # Once everything has been set up, we can (finally) connect to the broker
@@ -85,8 +87,9 @@ while 1:
             timestamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(time.time()))
             print("time : " + timestamp)
             authentication = True
+            time.sleep(3)
         i+=1
 
     if not authentication:
         print("no authorized devices near")
-    time.sleep(2)
+    time.sleep(3)
