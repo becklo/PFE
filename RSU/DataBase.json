@@ -1,0 +1,6 @@
+{
+  "carId" : "108",
+  "ParkingName" : "Metz",
+  "Date" : "2018-05-04T01:00",
+  "interest" : ["Parking","Sensor","GPS","Weather","Traffic"]
+}

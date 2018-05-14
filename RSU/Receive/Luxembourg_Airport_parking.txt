@@ -1,0 +1,9 @@
+                         |  Short Term 	|  Indoor 	   |     Open Air   	|    Economy
+Duration 	          |  Parking C    |	Parking A/B  |	Parking E,F,G   | 	Parking M
+________________________________________________________________________________
+0-15 min            |    0.00€ 	    |     2.00€ 	 |       0.00€ 	    |       -
+Per add. 15 min  |	   2.50€ 	    |     2.00€ 	 |       1.50€ 	    |       -
+1st day 	           |    65€ 	      |      25€ 	   |        20€ 	      |  5€ (minimum fee 15€)
+Per add. day 	     |    65€ 	      |      15€ 	   |        10€ 	      |  5 €
+1st week 	           |    250€ 	    |      85€ 	   |        50€ 	      |  35€
+Per add. weeks 	  |    250€ 	    |      50€ 	   |        40€ 	      |  35€
